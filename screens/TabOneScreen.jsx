@@ -13,12 +13,15 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
-export default function TabOneScreen({ }) {
+export default function TabOneScreen({ navigation }) {
     const dispatch = useDispatch();
     const balance = useSelector((state) => state.balance.value);
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Tab One</Text>
+
+            <Button title="Go Screen 1" onPress={() => navigation.navigate('TabTwoScreen')} />
+
             <View style={{ marginVertical: 40 }}>
                 <Button
                     title="Deposit 10$"
